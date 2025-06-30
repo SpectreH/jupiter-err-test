@@ -1,0 +1,27 @@
+:host {
+  display: block;
+  padding: 1rem clamp(1rem, 4vw, 3rem);
+}
+
+h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.timeline-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  padding-left: var(--timeline-margin-left);
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: var(--timeline-margin-left);
+}
+
+.timeline-container::-webkit-scrollbar {
+  height: 8px;
+}
+.timeline-container::-webkit-scrollbar-thumb {
+  background: rgb(150 150 150 / 0.4);
+  border-radius: 4px;
+}

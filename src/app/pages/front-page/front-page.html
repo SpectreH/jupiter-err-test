@@ -1,0 +1,14 @@
+<div>
+  <section *ngFor="let stripe of stripes$()" class="stripe">
+    <h2>{{ stripe.header }}</h2>
+
+    <div class="timeline-container">
+      <app-film-card
+        *ngFor="let item of stripe.data"
+        [title]="item.heading"
+        [photos]="item.verticalPhotos"
+      />
+    </div>
+  </section>
+</div>
+

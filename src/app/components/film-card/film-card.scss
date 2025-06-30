@@ -1,0 +1,30 @@
+.app-high-card {
+  width: var(--standard-card-width);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  background: none;
+  padding: 0;
+  margin: 0 var(--timeline-card-margin) 0 0;
+  box-shadow: none;
+  transition: background-color .2s;
+  scroll-snap-align: start;
+  --border-radius: 4px;
+}
+
+.image-container {
+  height: calc(var(--standard-card-width) / 2* 3);
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+    position: relative;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
