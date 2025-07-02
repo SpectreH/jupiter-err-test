@@ -18,6 +18,7 @@ export interface JupiterStripe {
 export interface JupiterItem {
   id: number;
   heading: string;
+  canonicalUrl: string;
   verticalPhotos: VerticalPhoto[];
 }
 
@@ -39,7 +40,6 @@ export class JupiterApiService {
   private readonly api =
     'https://services.err.ee/api/v2/category/getByUrl?url=video&domain=jupiter.err.ee';
 
-
   readonly stripes = signal<JupiterStripe[]>([]);
 
   constructor(private http: HttpClient) {
@@ -48,7 +48,12 @@ export class JupiterApiService {
 
   private loadFrontPage() {
     this.http.get<JupiterResponse>(this.api).subscribe((r) => {
-      const stripes = r.data.category.frontPage.filter((s) => s.highTimeline);
+      const stripes = r.data.category.frontPage
+        .filter(s =>
+          s.highTimeline &&
+          s.data?.length > 0
+        );
+
       this.stripes.set(stripes);
     });
   }

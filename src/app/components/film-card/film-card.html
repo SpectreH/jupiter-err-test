@@ -1,9 +1,11 @@
-<div class="app-high-card">
+<a class="app-high-card" [href]="url">
   <div class="image-container">
     <img
       [src]="defaultUrl"
       [attr.srcset]="srcSet"
       [alt]="title"
+      loading="lazy"
+      decoding="async"
     />
   </div>
-</div>
+</a>

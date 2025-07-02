@@ -1,11 +1,23 @@
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto,
+  "Helvetica Neue", sans-serif;
+  background-color: var(--color-primary-light);
+}
 
 :root {
   --timeline-button-width: 60px;
   --timeline-margin-left: 24px;
   --timeline-card-margin: calc(0.3vw + 4px);
   --nr-of-items: 6;
+  --color-primary-light: #20394c;
+  --color-text: #ffffff;
+  --carousel-arrow-bg-grad-start: rgba(32, 52, 67, .4);
+  --carousel-arrow-bg-grad-end: rgba(32, 52, 67, .8);
+  --carousel-arrow-bg-grad-start-hover: rgba(32, 52, 67, .6);
+  --carousel-arrow-bg-grad-end-hover: rgba(32, 52, 67, .9);
+
 
   --standard-card-width: calc(
     (100vw - var(--timeline-button-width) - var(--timeline-margin-left) - (var(--nr-of-items) * var(--timeline-card-margin)))

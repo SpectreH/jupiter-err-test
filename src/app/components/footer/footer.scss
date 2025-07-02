@@ -1,0 +1,20 @@
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 5px;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+  column-gap: 30px;
+  margin-top: 35px;
+  background-color: #0003;
+  font-size: 16px;
+  justify-content: space-between;
+
+  .footer-text {
+    color: #ffffff;
+  }
+}
+

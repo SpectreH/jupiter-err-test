@@ -1,11 +1,17 @@
-:host {
-  display: block;
-  padding: 1rem clamp(1rem, 4vw, 3rem);
+h2 {
+  font-size: calc(20px + .00625*(100vw - 320px));
+  line-height: 1.4em;
+  font-weight: 300;
+  padding-top: 3px;
+  border-radius: 2px;
+  color: var(--color-text);
+  font-weight: 400;
 }
 
-h2 {
-  margin: 0 0 0.5rem;
-  font-size: 1.25rem;
+.timeline-header {
+  margin-left: var(--timeline-margin-left);
+  display: flex;
+  line-height: 22px;
 }
 
 .timeline-container {

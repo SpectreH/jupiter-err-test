@@ -1,0 +1,47 @@
+:host {
+  --timeline-item-aspect-ratio: calc(16 / 9);
+  height: calc(var(--standard-card-width) / 2* 3);
+  width: var(--timeline-button-width);
+  position: absolute;
+  cursor: pointer;
+}
+
+:host(.timeline-arrow-high) {
+  --timeline-item-aspect-ratio: calc(2 / 3);
+}
+
+:host(.timeline-arrow-left) {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    var(--carousel-arrow-bg-grad-end) 0%,
+    var(--carousel-arrow-bg-grad-end) 15%,
+    var(--carousel-arrow-bg-grad-start) 85%,
+    var(--carousel-arrow-bg-grad-start) 100%
+  );
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+:host(.timeline-arrow-right) {
+  right: 0;
+  background: linear-gradient(
+    to right,
+    var(--carousel-arrow-bg-grad-start) 0%,
+    var(--carousel-arrow-bg-grad-start) 15%,
+    var(--carousel-arrow-bg-grad-end) 85%,
+    var(--carousel-arrow-bg-grad-end) 100%
+  );
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+:host img {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}

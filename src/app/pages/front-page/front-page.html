@@ -1,14 +1,29 @@
 <div>
-  <section *ngFor="let stripe of stripes$()" class="stripe">
-    <h2>{{ stripe.header }}</h2>
+  <section *ngFor="let stripe of stripes$(); let i = index" class="stripe">
+    <h2 class="timeline-header">{{ stripe.header }}</h2>
 
-    <div class="timeline-container">
+    <div class="timeline-container" #track (scroll)="onScroll(i, track)">
       <app-film-card
         *ngFor="let item of stripe.data"
         [title]="item.heading"
         [photos]="item.verticalPhotos"
+        [url]="item.canonicalUrl"
       />
+      <app-timeline-arrow
+          class="timeline-arrow timeline-arrow-left timeline-arrow-high"
+          side="left"
+          [hidden]="!canScrollLeft(i)"
+          (click)="scrollLeft(i)">
+      </app-timeline-arrow>
+      <app-timeline-arrow
+          class="timeline-arrow timeline-arrow-right timeline-arrow-high"
+          side="right"
+          [hidden]="!canScrollRight(i)"
+          (click)="scrollRight(i)">
+      </app-timeline-arrow>
     </div>
   </section>
+
+  <app-footer></app-footer>
 </div>
 
